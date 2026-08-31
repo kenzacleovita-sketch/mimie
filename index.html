@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mie Yummy | Kelezatan Otentik Modern</title>
+    <style>
+        :root {
+            --bg-dark: #121212;
+            --card-bg: #1e1e1e;
+            --accent-gold: #d4af37;
+            --accent-red: #e63946;
+            --text-light: #f8f9fa;
+            --text-muted: #a0a0a0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background-color: rgba(18, 18, 18, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--accent-red);
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin-left: 25px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            margin-top: 60px;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(18,18,18,1)), url('https://images.unsplash.com/photo-1569718212165-3a8278d5f624?q=80&w=1200') center/cover no-repeat;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            color: var(--accent-gold);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--accent-gold);
+            margin: 10px auto 0;
+        }
+
+        /* New Product Card */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+
+        .badge-new {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: var(--accent-red);
+            color: white;
+            padding: 5px 12px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            border-radius: 20px;
+            text-transform: uppercase;
+        }
+
+        .product-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 25px;
+        }
+
+        .product-title {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .product-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .product-price {
+            font-size: 1.3rem;
+            color: var(--accent-gold);
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        /* Buttons */
+        .btn-wa {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            padding: 12px;
+            background-color: #25D366;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 6px;
+            transition: background 0.3s;
+        }
+
+        .btn-wa:hover {
+            background-color: #1eb954;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            header { padding: 15px 5%; }
+            section { padding: 60px 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">MIE <span>YUMMY</span></div>
+        <nav>
+            <a href="#home">Beranda</a>
+            <a href="#new-product">Menu Baru</a>
+            <a href="#contact">Kontak</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>Sensasi Mie Premium</h1>
+        <p>Menyajikan kelezatan mie berkualitas tinggi dengan resep rahasia dan bahan-bahan segar pilihan.</p>
+    </section>
+
+    <section id="new-product">
+        <h2 class="section-title">Produk Terbaru</h2>
+        
+        <div class="product-grid">
+            <div class="product-card">
+                <span class="badge-new">Baru</span>
+                <img src="https://images.unsplash.com/photo-1552611052-33e04de081de?q=80&w=600" alt="Mie Truffle Black Pepper" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Mie Truffle Black Pepper</h3>
+                    <p class="product-desc">Perpaduan aroma truffle mewah dengan rasa lada hitam yang gurih dan menggugah selera.</p>
+                    <div class="product-price">Rp 35.000</div>
+                    <a href="https://wa.me/6281234567890?text=Halo%20Mie%20Yummy,%20saya%20ingin%20pesan%20Mie%20Truffle%20Black%20Pepper" class="btn-wa" target="_blank">Pesan via WhatsApp</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <span class="badge-new">Baru</span>
+                <img src="https://images.unsplash.com/photo-1612927601601-6638404737ce?q=80&w=600" alt="Mie Spicy Cheese Lava" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Mie Spicy Cheese Lava</h3>
+                    <p class="product-desc">Sensasi pedas membakar yang dipadukan dengan lelehan keju mozarella yang gurih dan lembut.</p>
+                    <div class="product-price">Rp 32.000</div>
+                    <a href="https://wa.me/6281234567890?text=Halo%20Mie%20Yummy,%20saya%20ingin%20pesan%20Mie%20Spicy%20Cheese%20Lava" class="btn-wa" target="_blank">Pesan via WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <p>&copy; 2026 Mie Yummy. All Rights Reserved.</p>
+    </footer>
+
+</body>
+  </html>
